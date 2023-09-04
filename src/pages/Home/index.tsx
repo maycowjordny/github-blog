@@ -1,8 +1,20 @@
 import { Card } from "../../componentes/Card";
 import { Profile } from "../../componentes/Profile";
 import { CardWrapper, HomeContainer, SearchWrapper } from "./styles";
-
+import { useState, useEffect } from "react"
+import { IssueProps } from "../../interfaces";
+import axios from "axios"
 export function Home() {
+
+  const [issues, setIssue] = useState<IssueProps[]>([])
+
+  useEffect(() => {
+    async function FetchIssues() {
+      const response = await axios('https://api.github.com/search/issues?q=repo:maycowjordny/github-blog')
+      setIssue(response.data.items)
+    }
+    FetchIssues()
+  }, [])
 
   return (
     <HomeContainer>
@@ -10,7 +22,7 @@ export function Home() {
       <SearchWrapper>
         <div>
           <strong>Publicações</strong>
-          <span>6 publicações</span>
+          <span>{issues.length} publicações</span>
         </div>
         <input
           type="text"
@@ -18,10 +30,15 @@ export function Home() {
           placeholder="Buscar conteúdo" />
       </SearchWrapper>
       <CardWrapper>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          issues.map(issue => (
+            <Card
+              key={issue.id}
+              data={issue}
+            />
+
+          ))
+        }
       </CardWrapper>
     </HomeContainer>
   )
