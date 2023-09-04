@@ -9,6 +9,6 @@ export const defaultTheme = {
     "BASE_PROFILE": "#0B1B2B",
     "BASE_BACKGROUND": "#071422",
     "BASE_INPUT": "#040F1A",
-
+    "BRAND_BLUE": "#3294F8",
     BLUE: "#3294F8"
 }

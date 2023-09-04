@@ -29,6 +29,7 @@ button{
 
 a{
     text-decoration: none;
+    color: ${props => props.theme.BRAND_BLUE};
 }
 
 p{

@@ -6,12 +6,12 @@ import logo from "../../assets/terminal-solid 1.svg"
 export function Header() {
     return (
         <HeaderContainer>
-            <img src={sideEffect} />
-            <div>
+            <img src={sideEffect} className="side-effect" />
+            <main>
                 <img src={logo} />
                 <h1>GITHUB BLOG</h1>
-            </div>
-            <img src={sideEffect2} />
+            </main>
+            <img src={sideEffect2} className="side-effect" />
         </HeaderContainer>
     )
 }

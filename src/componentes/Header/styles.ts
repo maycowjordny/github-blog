@@ -5,7 +5,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 
-    div{
+    main{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -22,6 +22,15 @@ align-items: center;
             font-size: 1.5rem;
             font-weight: 400;
             line-height: 160%;
+            white-space: nowrap;
         }
+    }
+
+    @media(max-width:940px){
+        justify-content: center;
+        .side-effect{
+            display: none;
+        }
+
     }
 `;

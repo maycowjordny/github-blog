@@ -10,7 +10,7 @@ export function Profile() {
                 <div id="title">
                     <h1>Maycow Jordny</h1>
                     <div>
-                        <a href="http://github.com/maycow-jordny">GITHUB</a>
+                        <a href="http://github.com/maycow-jordny" target="_blank">GITHUB</a>
                         <img src={arrow} />
                     </div>
                 </div>

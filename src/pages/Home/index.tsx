@@ -1,5 +1,6 @@
+import { Card } from "../../componentes/Card";
 import { Profile } from "../../componentes/Profile";
-import { HomeContainer, SearchWrapper } from "./styles";
+import { CardWrapper, HomeContainer, SearchWrapper } from "./styles";
 
 export function Home() {
 
@@ -11,8 +12,17 @@ export function Home() {
           <strong>Publicações</strong>
           <span>6 publicações</span>
         </div>
-        <input type="text" id="search" />
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar conteúdo" />
       </SearchWrapper>
+      <CardWrapper>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </CardWrapper>
     </HomeContainer>
   )
 }
