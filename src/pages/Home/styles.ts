@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const HomeContainer = styled.div`
-max-width: 100rem;
+max-width: 84rem;
 margin: 0 auto;
 display: flex;
 flex-direction: column;
@@ -22,7 +22,7 @@ div{
 }
 
 #search-input{
-    min-width: 100%;
+    width: 100%;
     padding: 0.75rem 1rem;
     border-radius: 0.375rem;
     border: 1px solid ${props => props.theme.BASE_BORDER};
@@ -68,7 +68,7 @@ justify-items: center;
 grid-template-columns: 1fr 1fr;
 gap: 2rem;
 
-@media(max-width:1300px){
+@media(max-width:1200px){
     grid-template-columns: 1fr;
 }
 `;

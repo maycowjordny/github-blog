@@ -6,6 +6,11 @@ height: 16.25rem;
 border-radius: 0.625rem;
 background-color:${props => props.theme.BASE_POST};
 padding: 2rem;
+border: 2px solid ${props => props.theme.BASE_POST};
+transition-duration: 700ms;
+&:hover{
+    border: 2px solid ${props => props.theme.BASE_LABEL};
+}
 
 div{
     display: flex;

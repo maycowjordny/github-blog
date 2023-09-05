@@ -1,29 +1,29 @@
 import { CalendarBlank, CaretLeft, ChatCircle, GithubLogo } from "@phosphor-icons/react";
 import { CardBody, CardDetailsContainer, CardHeader, InfoGithub } from "./styles";
 import arrow from "../../assets/icon.svg";
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom";
 import { IssueProps } from "../../interfaces";
 import { formatDistanceToNow, parseISO } from "date-fns"
+import { GithubClient } from "../../client/GithubClient"
 import ptBr from "date-fns/locale/pt-BR"
 
 export function Details() {
     const { number } = useParams()
     const navigate = useNavigate()
     const [issue, setIssue] = useState({} as IssueProps);
+    const client = new GithubClient();
 
     useEffect(() => {
-        async function FetchIssues() {
-            const response = await axios.get(`https://api.github.com/repos/maycowjordny/github-blog/issues/${number}`)
-            console.log(response);
-
-            if (response) {
+        async function fetchIssues() {
+            if (number) {
+                const response = await client.fetchIssues(number)
                 setIssue(response.data)
             }
         }
-        FetchIssues()
+        fetchIssues()
     }, [])
+
     if (!issue.created_at) return
     const formatedDate = (parseISO(issue.created_at))
 

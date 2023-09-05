@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const ProfileContainer = styled.div`
-min-width: 100%;
+min-width:54rem;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -11,6 +11,12 @@ border-radius: 0.625rem;
 box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20);
 background-color: ${props => props.theme.BASE_PROFILE};
 
+
+@media(max-width:1000px){
+    flex-direction: column;
+    align-items: center;
+    min-width: 32rem;
+}
 img{
     width: 9.25rem;
     height: 9.25rem;
@@ -19,12 +25,12 @@ img{
 `;
 
 export const InfoUser = styled.div`
-
+width: 100%;
 #title{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding-bottom: 0.5rem;
 
     div{
         display: flex;
@@ -34,7 +40,6 @@ export const InfoUser = styled.div`
 }
 
 h1{
-    margin-bottom: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 130%;
@@ -55,7 +60,6 @@ img{
 }
 
 p{
-    margin-bottom: 1.75rem;
     font-weight: 400;
     line-height: 160%;
 }
@@ -67,6 +71,7 @@ export const InfoGithub = styled.div`
 display: flex;
 gap: 1.5rem;
 align-items: center;
+margin-top: 3.5rem;
 
 div{
     display: flex;

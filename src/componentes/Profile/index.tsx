@@ -3,14 +3,15 @@ import arrow from "../../assets/icon.svg";
 import { GithubLogo, Buildings, Users } from "@phosphor-icons/react";
 import { useState, useEffect } from "react"
 import { ProfileProps } from "../../interfaces";
-import axios from "axios";
+import { GithubClient } from "../../client/GithubClient"
 export function Profile() {
     const [profile, setProfile] = useState<ProfileProps>()
+    const client = new GithubClient();
 
     useEffect(() => {
         async function FetchInfoProfile() {
-            const response = await axios('https://api.github.com/users/maycowjordny')
-            setProfile(response.data)
+            const response = await client.FetchInfoProfile()
+            setProfile(response)
         }
         FetchInfoProfile()
     }, [])
@@ -39,7 +40,7 @@ export function Profile() {
                     </div>
                     <div>
                         <Users size={16} color="#3a536b" weight="fill" />
-                        <span>{profile?.followers}</span>
+                        <span>{profile?.followers} seguidores</span>
                     </div>
                 </InfoGithub>
             </InfoUser>
